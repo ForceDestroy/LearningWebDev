@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+
+{% block title %}{{super()}} - Login {% endblock %}
+
+{% block content %} 
+<body>
+  <div style="padding:40px;">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container col-md-4">
+        <h1 style="text-align: center;">Admin Login</h1>
+        <div class="mx-auto">
+        <form action="" method="post" style="text-align: center;">
+          <input type="text" placeholder="Username" name="username" value="{{
+            request.form.username }}">
+            <br>
+           <input type="password" placeholder="Password" name="password" value="{{
+            request.form.password }}">
+            <br>
+          <input class="btn btn-default" type="submit" value="Login">
+        </form>
+        </div>
+        {% if error %}
+          <p class="error" style="text-align: center;"><strong>Error:</strong> {{ error }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  </body>
+{% endblock %}

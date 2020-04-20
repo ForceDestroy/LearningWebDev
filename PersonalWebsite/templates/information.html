@@ -1,0 +1,51 @@
+{% extends "home.html" %}
+
+{% block title %}{{super()}} - Information {% endblock %}
+
+{% block content %} 
+    <div style="padding:40px;">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4" style="text-align:center;">Find me!</h2>
+        <div class="col-md-4 px-0 text-center" style="margin-left:auto; margin-right:auto;">
+           <a href="https://github.com/ForceDestroy"> <img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" style="height: 100px; width: 100px;"> </a>
+           <a href="https://www.linkedin.com/in/sangeethan/"> <img src="https://pluspng.com/img-png/linkedin-png-linkedin-social-icon-png-image-2034-512.png" style="height: 110px; width: 110px;"> </a>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <h2 class="display-4" style="text-align:center;">Email me!</h2>
+        <div class="col-md-4 px-0" style="margin-left:auto; margin-right:auto;">
+          <form action="{{ url_for('info') }}" method="post">
+             
+            <div class="form-field">
+            {{form.name.label}}
+            {{form.name(size=50)}}
+            </div>
+
+            <div class="form-field">
+              {{form.email.label}}
+              {{form.email(size=50)}}
+            </div>
+         
+            <div class="form-field">
+              {{form.subject.label}}
+              {{form.subject(size=50)}}
+            </div>
+         
+            <div class="form-field">
+              {{form.message.label}}
+              <br>
+              {{form.message(cols="52", rows="10")}}
+            </div>
+
+            {{ form.submit }}
+          </form>
+          </div>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+{% endblock %}

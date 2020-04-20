@@ -1,0 +1,38 @@
+{% extends "home.html" %}
+
+{% block title %}{{super()}} - Miscellaneous {% endblock %}
+
+{% block content %} 
+    <div style="padding:40px;">
+    <div class="jumbotron jumbotron-fluid">
+      <h2 class="display-4" style="text-align:center;">Pokemon Of The Session</h2>
+      <div class="container col-md-4">
+        <table>
+          <tr>
+          <div class="col-md-4 px-0 text-center" style="margin-left:auto; margin-right:auto;">
+            <img class="img-fluid" src = {{pokeImg}} height="500px" width="500px"> 
+          </div>
+          </tr>
+          <tr>
+          <h2 class="display-6" style="text-align:center;"> {{pokeName}} </h2>
+          </tr>
+        </table>
+        
+      </div>
+      <h1 style="text-align: center;">-----------------------------------------------------------------------</h1->
+      <h2 class="display-4" style="text-align:center;">Anime Of The Session</h2>
+      <div class="container col-md-4">
+        <table>
+          <tr>
+          <div class="col-md-4 px-0 text-center" style="margin-left:auto; margin-right:auto;">
+            <img class="img-fluid" src = {{animeImg}} height="500px" width="500px"> 
+          </div>
+          </tr>
+          <tr>
+          <h2 class="display-6" style="text-align:center;"> {{animeName}} </h2>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

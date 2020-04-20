@@ -1,0 +1,24 @@
+{% extends "home.html" %}
+
+{% block title %}{{super()}} - To Do {% endblock %}
+
+{% block content %} 
+    <div style="padding:40px;">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+      <div class="container">
+        <h2 class="display-4" style="text-align:center;">Hello Sangeethan, here are your futur plans!</h2>
+        <div class="col-md-4 px-0" style="margin-left:auto; margin-right:auto;">
+          <ul>
+            {% for x in var4 %}
+            <li class="lead"> <strong> {{x.Name}} </strong> <br> {{x.Date}} </li>
+            {% endfor %}
+          </ul>
+          </div>
+        </div>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+{% endblock %}

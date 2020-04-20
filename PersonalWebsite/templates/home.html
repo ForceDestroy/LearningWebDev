@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+    {% block head %}
+        <title> {% block title %} ForceDestroy {% endblock %} </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="static/homeStyle.css" />
+    {% endblock %}
+    </head>
+
+    <body class = "default">
+    {% block navbar %}
+        <nav class="navbar navbar-expand-xl navbar-light bg-light custom1">
+            <a class="navbar-brand col-8" style = "color:black; font:40px impact, sans-serif;">ForceDestroy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse col-4" id="navbarNav">
+                <ul class="navbar-nav" style = "margin-right: 0; margin-left: auto;">
+                <li class="nav-item active">
+                    <a class="nav-link custom2" href="/">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom2" href="/bio">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom2" href="/misc">Miscellaneous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom2" href="/info">Information</a>
+                </li>
+                {% if not loggedIn %}
+                <li class="nav-item">
+                    <a class="nav-link custom2" href="/login">Login</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link custom2" href="/todo">Todo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom2" href="/login">Logout</a>
+                </li>
+                {% endif %}
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
+
+    {% block content %}
+        <div style="position:absolute; top:20%; left:25%; right:25%;">
+            <h1 class="custom3" style="color: black;">
+                Hey there, I'm Sangeethan.
+            </h1>
+            <p class = "custom3" style="color: black;">
+                Welcome to my world, feel free to take a look around. <br>
+                Check out the Miscellaneous section for some fun.
+            </p>
+        </div>
+    {% endblock %}
+    </body>
+</html>

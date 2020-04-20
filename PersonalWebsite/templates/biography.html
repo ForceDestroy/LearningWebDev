@@ -1,0 +1,36 @@
+{% extends "home.html" %}
+
+{% block title %}{{super()}} - Biography {% endblock %}
+
+{% block content %} 
+  <div style="padding:40px;">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 class="display-4" style="text-align:center;">Education</h2>
+      <ul>
+        {% for x in var1 %}
+        <li class="lead"> <strong> {{x.Degree}} </strong> <br> {{x.School}} </li>
+        {% endfor %}
+      </ul>
+      </div>
+
+      <div class="container">
+        <h2 class="display-4" style="text-align:center;">Experience</h2>
+        <ul>
+          {% for x in var2 %}
+          <li class="lead"> <strong> {{x.Title}} </strong> <br> {{x.Location}} </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="container">
+        <h2 class="display-4" style="text-align:center;">Projects</h2>
+        <ul>
+          {% for x in var3 %}
+          <li class="lead"> <strong> {{x.Name}} </strong> <br> {{x.Team}} </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
